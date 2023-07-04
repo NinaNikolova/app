@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +8,14 @@ import { Injectable } from '@angular/core';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  getPosts(){
-
+  getPosts(limit?: number) {
+    const { appUrl } = environment;
+    const limitFilter=limit ? `?limit=${limit}`: ''
+    return this.http.get(`${appUrl}/posts${limitFilter}`)
   }
-  getThemes(){
-
+  getThemes() {
+    // return observable
+    const { appUrl } = environment;
+    return this.http.get(`${appUrl}/themes`)
   }
 }
