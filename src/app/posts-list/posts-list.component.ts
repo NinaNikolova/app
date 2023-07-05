@@ -11,7 +11,7 @@ constructor(private apiService: ApiService){}
 
 ngOnInit(): void {
   // this is observable and we have to subscribe 
-  this.apiService.getPosts(5).subscribe((posts)=>console.log(posts))
+  this.apiService.getPosts(5).subscribe((posts)=>console.log({posts}))
 }
 
 
