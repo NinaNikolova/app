@@ -1,4 +1,4 @@
-# App
+# Angular Workshop 'Softuni-forum' for Course Angular with Type Script...it's common exercise for all students in course
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
