@@ -7,18 +7,29 @@ import { Post } from '../types/post';
   templateUrl: './posts-list.component.html',
   styleUrls: ['./posts-list.component.css']
 })
-export class PostsListComponent implements OnInit{
-  postList:Post[]=[];
-constructor(private apiService: ApiService){}
+export class PostsListComponent implements OnInit {
+  postList: Post[] = [];
+  isLoading: boolean = true;
+  constructor(private apiService: ApiService) { }
 
-ngOnInit(): void {
-  
-  // this is observable and we have to subscribe 
-  this.apiService.getPosts(5).subscribe((posts)=>{
-    console.log(posts[0])
-    this.postList=posts;
-  })
+  ngOnInit(): void {
+
+    // this is observable and we have to subscribe 
+    this.apiService.getPosts(5).subscribe({
+      next: (posts) => {
+        this.postList = posts;
+        this.isLoading = false;
+
+      },
+      error: (err) => {
+        this.isLoading = false;
+        console.error(`Error: ${err}`)
+      }
+    })
+
+
+
+  }
 }
 
 
-}
