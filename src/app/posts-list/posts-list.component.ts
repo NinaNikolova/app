@@ -10,6 +10,7 @@ import { Post } from '../types/post';
 export class PostsListComponent implements OnInit {
   postList: Post[] = [];
   isLoading: boolean = true;
+  thereAreNoPosts: boolean = false;
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
@@ -19,7 +20,9 @@ export class PostsListComponent implements OnInit {
       next: (posts) => {
         this.postList = posts;
         this.isLoading = false;
-
+        if (this.postList.length == 0) {
+          this.thereAreNoPosts = true;
+        }
       },
       error: (err) => {
         this.isLoading = false;
