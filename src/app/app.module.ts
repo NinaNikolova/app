@@ -9,12 +9,18 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
 import { ThemeModule } from './theme/theme.module';
+import { ThemesListComponent } from './themes-list/themes-list.component';
+import { PostsListComponent } from './posts-list/posts-list.component';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ThemesListComponent,
+    PostsListComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +31,7 @@ import { ThemeModule } from './theme/theme.module';
     UserModule,
     ThemeModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
