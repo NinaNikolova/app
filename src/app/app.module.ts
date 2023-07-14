@@ -12,6 +12,7 @@ import { ThemeModule } from './theme/theme.module';
 import { ThemesListComponent } from './themes-list/themes-list.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { MainComponent } from './main/main.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MainComponent } from './main/main.component';
     HomeComponent,
     ThemesListComponent,
     PostsListComponent,
-    MainComponent
+    MainComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
