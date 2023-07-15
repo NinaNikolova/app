@@ -11,7 +11,6 @@ import { MainComponent } from '../main/main.component';
   declarations: [
     NewThemeComponent,
     CurrentThemeComponent,
-
   ],
   imports: [
     CommonModule,
