@@ -1,32 +1,33 @@
 <div class="container">
-    <form class="login" action="" method="post">
+    <form class="login" #form="ngForm" (ngSubmit)="login(form)">
 
         <fieldset>
             <h2>Login Form</h2>
 
             <p class="field field-icon">
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input class="input-error" type="email" name="email" #inputEmail id="email" placeholder="john.doe@gmail.com">
+                <input class="input-error" type="email" name="email" #inputEmail="ngModel" id="email" placeholder="john.doe@gmail.com" ngModel>
             </p>
-            <p class="error">
+            <ng-container *ngIf="inputEmail.touched">
+            <p class="error" *ngIf="inputEmail.errors?.['required']">
                 Email is required!
             </p>
-            <!-- <p class="error">
+            <p class="error">
                 Email is not valid!
-            </p> -->
-
+            </p>
+            </ng-container>
             <p class="field field-icon">
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" #inputPassword name="password" id="password" placeholder="******">
+                <input type="password" #inputPassword="ngModel" name="password" id="password" placeholder="******" ngModel>
             </p>
-            <!-- <p class="error">
+            <p class="error">
                 Password is required!
             </p>
             <p class="error">
                 Password must be at least 4 characters!
-            </p> -->
+            </p>
 
-            <button (click)="login(inputEmail.value, inputPassword.value)">Login</button>
+            <button>Login</button>
 
             <p class="text-center">
                 Have an account?
@@ -35,4 +36,5 @@
 
         </fieldset>
     </form>
+    {{form.value | json}}
 </div>
