@@ -42,7 +42,7 @@
 
       <div class="new-theme-buttons">
         <button class="cancel">Cancel</button>
-        <button class="public">Post</button>
+        <button class="public" [disabled]="form.invalid">Post</button>
       </div>
     </form>
   </div>
