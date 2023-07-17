@@ -22,4 +22,5 @@ export class LoginComponent {
     this.userService.login();
     this.router.navigate(["/"]);
   }
+
 }
