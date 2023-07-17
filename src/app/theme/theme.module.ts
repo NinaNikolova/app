@@ -4,6 +4,7 @@ import { NewThemeComponent } from './new-theme/new-theme.component';
 import { CurrentThemeComponent } from './current-theme/current-theme.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { MainComponent } from '../main/main.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { MainComponent } from '../main/main.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ThemeRoutingModule
   ]
 })
